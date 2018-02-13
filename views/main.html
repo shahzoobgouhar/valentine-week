@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<script src="../controllers/angular.min.js"></script>
+<script src="../controllers/jquery-3.1.1.min.js"></script>
+<script src="../controllers/script.js"></script>
+<script src="../controllers/bootstrap.min.js"></script>
+<script src="../controllers/page.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/styles.css">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+<body ng-app="ValentineWeek" ng-controller="myCtrl">
+	<div class = "section headTtitle">
+			<div class="col-sm-1 col-xs-12 icon">
+				<img src="../images/icon.png">
+			</div>
+			<div class="col-sm-11 col-xs-12 themeTitle">
+				<h1>The Valentine Week...</h1>
+			</div>
+			<div class="col-sm-12 col-xs-12 icon">
+				<p>Custom and beautiful card design for each day</p>
+			</div>
+	</div>
+	<div class = "section mainBody" ng-hide = "showDetailFlag">
+		<div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="left:0px; top:150px;">
+			<a class="a2a_button_facebook"></a>
+			<a class="a2a_button_twitter"></a>
+			<a class="a2a_button_google_plus"></a>
+			<a class="a2a_button_pinterest"></a>
+			<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+		</div>
+		<div class="row">
+			<div class="col-md-3 col-sm-4 col-xs-6 hovereffect">
+				<div id="roseDay"><myday day = "roseDay"></myday></div>
+				<div class="overlay">
+				   <a class="info" href="#" ng-click = "openCard('roseDay')">Open</a></br>
+				   <a class="info" href="#" ng-click = "printCard('roseDay')">Print</a></br>
+				   <a class="info" href="#" ng-click = "deleteCard('roseDay')">Delete</a>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-4 col-xs-6 hovereffect">
+				<div id="proposeDay"><myday day = "proposeDay"></myday></div>
+				<div class="overlay">
+				   <a class="info" href="#" ng-click = "openCard('proposeDay')">Open</a></br>
+				   <a class="info" href="#" ng-click = "printCard('proposeDay')">Print</a></br>
+				   <a class="info" href="#" ng-click = "deleteCard('proposeDay')">Delete</a>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-4 col-xs-6 hovereffect">
+				<div id="chocolateDay"><myday day = "chocolateDay"></myday></div>
+				<div class="overlay">
+				   <a class="info" href="#" ng-click = "openCard('chocolateDay')">Open</a></br>
+				   <a class="info" href="#" ng-click = "printCard('chocolateDay')">Print</a></br>
+				   <a class="info" href="#" ng-click = "deleteCard('chocolateDay')">Delete</a>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-4 col-xs-6 hovereffect">
+				<div id="teddyDay"><myday day = "teddyDay"></myday></div>
+				<div class="overlay">
+				   <a class="info" href="#" ng-click = "openCard('teddyDay')">Open</a></br>
+				   <a class="info" href="#" ng-click = "printCard('teddyDay')">Print</a></br>
+				   <a class="info" href="#" ng-click = "deleteCard('teddyDay')">Delete</a>
+				</div>
+			</div>
+		
+			<div class="col-md-3 col-sm-4 col-xs-6 hovereffect">
+				<div id="promiseDay"><myday day = "promiseDay"></myday></div>
+				<div class="overlay">
+				   <a class="info" href="#" ng-click = "openCard('promiseDay')">Open</a></br>
+				   <a class="info" href="#" ng-click = "printCard('promiseDay')">Print</a></br>
+				   <a class="info" href="#" ng-click = "deleteCard('promiseDay')">Delete</a>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-4 col-xs-6 hovereffect">
+				<div id="hugDay"><myday day = "hugDay"></myday></div>
+				<div class="overlay">
+				   <a class="info" href="#" ng-click = "openCard('hugDay')">Open</a></br>
+				   <a class="info" href="#" ng-click = "printCard('hugDay')">Print</a></br>
+				   <a class="info" href="#" ng-click = "deleteCard('hugDay')">Delete</a>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-4 col-xs-6 hovereffect">
+				<div id="kissDay"><myday day = "kissDay"></myday></div>
+				<div class="overlay">
+				   <a class="info" href="#" ng-click = "openCard('kissDay')">Open</a></br>
+				   <a class="info" href="#" ng-click = "printCard('kissDay')">Print</a></br>
+				   <a class="info" href="#" ng-click = "deleteCard('kissDay')">Delete</a>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-4 col-xs-6 hovereffect">
+				<div id="valentineDay"><myday day = "valentineDay"></myday></div>
+				<div class="overlay">
+				   <a class="info" href="#" ng-click = "openCard('valentineDay')">Open</a></br>
+				   <a class="info" href="#" ng-click = "printCard('valentineDay')">Print</a></br>
+				   <a class="info" href="#" ng-click = "deleteCard('valentineDay')">Delete</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class = "section details" ng-show = "showDetailFlag">
+		<h2>Build your custom {{title}} card</h2>
+		<h3>Select One of the quotes below..</h3>
+		<label ng-repeat="quote in quotes">
+                <input type="radio" ng-model="$parent.quote" name="quote" value="{{quote.quote}}" required />{{quote.quote}}
+        </label>
+		<br/>
+		<textarea rows="4" cols="50" placeholder="Write your message here.." ng-model='message'>{{message}}</textarea></br>
+		<button class="btn" ng-click="buildCard()">Customize & Build</button>
+		<button class="btn" ng-disabled='printFlag'  data-toggle="modal" data-target="#myModal">Print Card</button><br/>
+		<button class="btn btn-primary" ng-click = "showAllCards()">Back to All Cards</button>
+		<!-- Preview-->
+		<!-- Modal -->
+		<div id="myModal" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body" id="printableArea">
+					<img ng-src='{{imageSrc}}'>
+					<div class="page-break"></div>
+					<h2>{{selectedQuote}}</h2>
+					<h4>{{message}}</h4>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" id="printCard" data-dismiss="modal" ng-click="printCard('printableArea')">Print</button>
+				</div>
+			</div>
+
+		  </div>
+		</div>
+	</div>
+</body>
+</html>
