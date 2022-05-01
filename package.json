@@ -1,0 +1,19 @@
+{
+  "name": "valentine-week",
+  "version": "1.0.0",
+  "description": "Gift your valentine your personalized card every day of the valentine's week.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shahzoobgouhar/valentine-week.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shahzoobgouhar/valentine-week/issues"
+  },
+  "homepage": "https://github.com/shahzoobgouhar/valentine-week#readme"
+}

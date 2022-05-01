@@ -188,7 +188,7 @@ app.controller("myCtrl" , function($scope){
 app.directive('myday' , function(){
 	var directive = {};
 	directive.restrict = 'E';
-	directive.template = "<figure>"+"<img ng-src='{{day.imageSrc}}'>"+"<figcaption><b>{{day.date}} - {{day.title}}</b></figcaption></figure>";
+	directive.template = "<figure>"+"<img style='width:100%' ng-src='{{day.imageSrc}}'>"+"<figcaption style='color: white'><b>{{day.date}} - {{day.title}}</b></figcaption></figure>";
 	
 	directive.scope = {
 		day:"=day"

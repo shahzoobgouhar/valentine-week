@@ -24,7 +24,7 @@ div.icon > img{
 div.themeTitle{
 	margin-top:40px; /* undo it in col xs or write media query */
 	padding-left:25px;
-	
+	color: white;
 }
 
 div.mainBody > div.row > div{
