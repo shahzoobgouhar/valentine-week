@@ -6,42 +6,42 @@ app.controller("myCtrl" , function($scope){
 	$scope.roseDay = {
 		title:"Rose Day",
 		date:"7 February",
-		imageSrc:"../images/roseDay.jpg"
+		imageSrc:"./images/roseDay.jpg"
 	};
 	$scope.proposeDay = {
 		title:"Propose Day",
 		date:"8 February",
-		imageSrc:"../images/proposeDay.jpg"
+		imageSrc:"./images/proposeDay.jpg"
 	};
 	$scope.chocolateDay = {
 		title:"Chocolate Day",
 		date:"9 February",
-		imageSrc:"../images/chocolateDay.jpg"
+		imageSrc:"./images/chocolateDay.jpg"
 	};
 	$scope.teddyDay = {
 		title:"Teddy Day",
 		date:"10 February",
-		imageSrc:"../images/teddyDay.jpg"
+		imageSrc:"./images/teddyDay.jpg"
 	};
 	$scope.promiseDay = {
 		title:"Promise Day",
 		date:"11 February",
-		imageSrc:"../images/promiseDay.jpg"
+		imageSrc:"./images/promiseDay.jpg"
 	};
 	$scope.hugDay = {
 		title:"Hug Day",
 		date:"12 February",
-		imageSrc:"../images/hugDay.jpg"
+		imageSrc:"./images/hugDay.jpg"
 	};
 	$scope.kissDay = {
 		title:"Kiss Day",
 		date:"13 February",
-		imageSrc:"../images/kissDay.jpg"
+		imageSrc:"./images/kissDay.jpg"
 	};
 	$scope.valentineDay = {
 		title:"Valentine Day",
 		date:"14 February",
-		imageSrc:"../images/valentineDay.jpg"
+		imageSrc:"./images/valentineDay.jpg"
 	};
 	
 	$scope.openCard = function(cardType){
